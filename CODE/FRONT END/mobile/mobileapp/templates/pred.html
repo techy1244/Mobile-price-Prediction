@@ -1,0 +1,30 @@
+{% extends "uhome.html" %}
+{% block code %}
+<div class="out">
+    <h2>{{msg}}</h2>
+</div>
+<div class='pred' >
+<form  method="post" action="{%url 'pred'%}">
+    {% csrf_token %}
+    {% for i in col %}
+    <label>{{i}}</label>
+    <br>
+    <input type="float" name="{{i}}" placeholder="{{i}}">
+    <br>
+    {% endfor %}
+</div>
+<div class='pred1' >
+    <form  method="post" action="{%url 'pred'%}">
+        {% csrf_token %}
+        {% for i in col1 %}
+        <label>{{i}}</label>
+        <br>
+        <input type="float" name="{{i}}" placeholder="{{i}}">
+        <br>
+        {% endfor %}
+    </div>
+    <div class='bt'>
+        <button type="submit">submit</button>
+    </div>
+</form>
+{% endblock %}

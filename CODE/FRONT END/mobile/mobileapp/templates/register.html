@@ -1,0 +1,35 @@
+{% extends "index.html" %}
+{% block code %}
+<div class='reg'>
+    <form method="post" action="{%url 'register'%}">
+        {% csrf_token %}
+        <h2>Register</h2>
+        <br>
+        <label>Enter Username</label>
+        <br>
+        <input type="text" name="uname" placeholder="Enter Username">
+        <br><br>
+        <label>Enter Email</label>
+        <br>
+        <input type="email" name="uemail" placeholder="Enter Email">
+        <br><br>
+        <label>Enter Password</label>
+        <br>
+        <input  type="password" name="upass" placeholder="Enter password">
+        <br><br>
+        <label>Conform Password</label>
+        <br>
+        <input  type="password" name="cpass" placeholder="Conform password">
+        <br><br>
+        <button type="submit">submit</button>
+        <br><br>
+        <h4>You  have a account <a href="/login" style="color: white; background-color: blueviolet;
+            border-style: solid;"><br>signin</a></h4>
+    </form>
+</div>
+{% if msg == 'invalid' %}
+<script type="text/javascript">
+    alert('Give a Proper Detail')
+</script>
+{% endif %}
+{% endblock %}

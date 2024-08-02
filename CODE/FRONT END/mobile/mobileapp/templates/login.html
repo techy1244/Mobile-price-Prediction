@@ -1,0 +1,34 @@
+{% extends "index.html" %}
+{% block code %}
+{% if mmm == 'valid' %}
+<script type="text/javascript">
+    alert('Pass word changed Sucess')
+</script>
+{% endif %}
+<div class='login'>
+    <form method="post" action="{%url 'login'%}">
+        {% csrf_token %}
+        <h2>login</h2>
+        <br>
+        <label>Enter Email</label>
+        <br>
+        <input type="email" name="uemail" placeholder="Enter Email">
+        <br><br>
+        <label>Enter Password</label>
+        <br>
+        <input  type="password" name="upass" placeholder="Enter password">
+        <br><br>
+        <button type="submit">login</button>
+        <br><br>
+        <h4>You don't have a account <a href="/register" style="color: white; background-color: blueviolet;
+            border-style: solid;"><br>signup</a></h4>
+    </form>
+</div>
+{% if msg == 'invalid' %}
+<script type="text/javascript">
+    alert('Give a Proper Detail')
+</script>
+{% else %}
+<center><h2 style="color: white;">Are you Forgot Password <a href="/checkmail" style="color: red;">click</a></h2></center>
+{% endif %}
+{% endblock %}

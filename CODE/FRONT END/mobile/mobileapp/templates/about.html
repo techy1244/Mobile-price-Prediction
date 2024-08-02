@@ -1,0 +1,17 @@
+{% extends "index.html" %}
+{% block code %}
+<div class="about">
+    <p>This project aims to create a mobile price classification system using a dataset from Kaggle. The dataset includes features related to mobile phones, and the goal is to classify them into four price categories: 0 (low cost), 1 (medium cost), 2 (high cost), and 3 (very high cost). The project will employ three key algorithms for classification:
+        <ul>
+            <li>Logistic Regression: A simple yet effective linear model for binary and multiclass classification tasks.</li>
+            <li>Random Forest Classifier: A robust ensemble learning method that combines multiple decision trees for improved accuracy.</li>
+            <li>Hybrid Classifier: This classifier may involve a combination of different algorithms or techniques, possibly including feature engineering, to enhance the classification performance.</li>
+            The project's backend will be implemented in Python, utilizing libraries like scikit-learn for machine learning. The frontend will be developed using HTML, CSS, and JavaScript to create a user-friendly interface for inputting mobile features and obtaining price category predictions. The expected outcome is a user-friendly system that can accurately classify mobile prices based on the provided features.
+        </ul>
+    </p>
+</div>
+
+<div class="ab_img">
+    <img src="/static/img/mob.jpeg" style="width: 250px;height:350px">
+</div>
+{% endblock %}

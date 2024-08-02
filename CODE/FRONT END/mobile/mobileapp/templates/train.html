@@ -1,0 +1,29 @@
+{% extends "uhome.html" %}
+{% block code %}
+<h1>Classification Report {{algor}}</h1>
+<br>
+<h4><pre><b>{{ dat1|safe }}</b></pre></h4>
+
+
+
+<div class='login'>
+    <form method="post" action="{%url 'train'%}">
+        {% csrf_token %}
+    <h2>Algorithem report</h2>
+    <br>
+    <select name="algo" style="width: 250px; height:25px">
+        <option value="0">Select Algorithem</option>
+        <option value="1">RandomForest</option>
+        <option value="2">LogisticRegression</option>
+        <option value="3">Hybrid Module</option>
+    </select>
+    <br><br>
+    <button type="submit">submit</button>
+    </form>
+</div>
+{% if msg == 'invalid' %}
+<script type="text/javascript">
+    alert('hello user select proper Algorithem')
+</script>
+{% endif %}
+{% endblock %}
